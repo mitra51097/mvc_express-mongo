@@ -1,0 +1,10 @@
+Employees
+
+npm init
+npm install express mongodb mongooose
+npm install nodemon --save-dev (by def it will be prod)
+
+GET: http://localhost:7499/employees
+GET: http://localhost:7499/employees/<id>
+POST: http://localhost:7499/employees
+PATCH: http://localhost:7499/employees/<id>
