@@ -1,17 +1,17 @@
 const mongoose = require("mongoose")
 
 const empSchema = new mongoose.Schema({
-    "name": {
+    name: {
         type : String,
         required : true
     },
-    "location": {
+    location: {
         type : String,
         required : true
     },
     bool: {
         type : Boolean,
-        required : true,
+        //required : true,
         default : false
     }
 })
