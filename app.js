@@ -1,18 +1,20 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const url = "mongodb://localhost/empDb"
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 
 const app = express();
-
+app.use(express.urlencoded({ extended: false}))
+//app.use(bodyParser.json());
 mongoose.connect(url, {useNewUrlParser:true})//to avoid some warnings
+mongoose.Promise = global.Promise;
 //to handle the above connection
 const con = mongoose.connection
 
 con.on('open', function(){
     console.log("db connected....!")
 })
-app.use(bodyParser.urlencoded({extended: true}));
+//app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 
 //creating a router for handling employee related routings
